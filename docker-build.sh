@@ -1,8 +1,11 @@
 #!/bin/sh
 
-DOCKER_ACCOUNT=valentingarciairiart
-DOCKER_USERNAME=valentingarciairiart
-DOCKER_PASSWORD=Vale0811!
+set -o allexport
+if [ -f .env ]; then
+    source .env
+fi
+set +o allexport
+
 
 echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 
