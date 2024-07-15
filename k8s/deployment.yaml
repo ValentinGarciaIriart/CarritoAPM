@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,11 +23,16 @@ spec:
         name: apache
         ports:
         - containerPort: 80
-        resources: {}
+        resources:
+          limits:
+            cpu: "0.5"  # 0.5 CPU cores
+            memory: "512Mi"  # 512 MB memory
+          requests:
+            cpu: "0.1"  # 0.1 CPU cores
+            memory: "256Mi"  # 256 MB memory
 status: {}
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,11 +57,16 @@ spec:
         name: catalog
         ports:
         - containerPort: 8080
-        resources: {}
+        resources:
+          limits:
+            cpu: "1"  # 1 CPU core
+            memory: "1Gi"  # 1 GB memory
+          requests:
+            cpu: "0.5"  # 0.5 CPU cores
+            memory: "512Mi"  # 512 MB memory
 status: {}
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -80,11 +91,16 @@ spec:
         name: customer
         ports:
         - containerPort: 8080
-        resources: {}
+        resources:
+          limits:
+            cpu: "1"  # 1 CPU core
+            memory: "1Gi"  # 1 GB memory
+          requests:
+            cpu: "0.5"  # 0.5 CPU cores
+            memory: "512Mi"  # 512 MB memory
 status: {}
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -109,11 +125,16 @@ spec:
         name: order
         ports:
         - containerPort: 8080
-        resources: {}
+        resources:
+          limits:
+            cpu: "1"  # 1 CPU core
+            memory: "1Gi"  # 1 GB memory
+          requests:
+            cpu: "0.5"  # 0.5 CPU cores
+            memory: "512Mi"  # 512 MB memory
 status: {}
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -133,7 +154,6 @@ status:
   loadBalancer: {}
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -153,7 +173,6 @@ status:
   loadBalancer: {}
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -173,7 +192,6 @@ status:
   loadBalancer: {}
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
