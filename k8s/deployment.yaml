@@ -19,7 +19,7 @@ spec:
         run: apache
     spec:
       containers:
-      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-apache:apm2
+      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-apache:apm3
         name: apache
         ports:
         - containerPort: 80
@@ -53,7 +53,7 @@ spec:
         run: catalog
     spec:
       containers:
-      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-catalog:apm2
+      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-catalog:apm3
         name: catalog
         ports:
         - containerPort: 8080
@@ -87,7 +87,7 @@ spec:
         run: customer
     spec:
       containers:
-      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-customer:apm2
+      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-customer:apm3
         name: customer
         ports:
         - containerPort: 8080
@@ -121,7 +121,7 @@ spec:
         run: order
     spec:
       containers:
-      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-order:apm2
+      - image: docker.io/valentingarciairiart/microservice-kubernetes-demo-order:apm3
         name: order
         ports:
         - containerPort: 8080
